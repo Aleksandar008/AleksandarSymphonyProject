@@ -9,6 +9,7 @@ public class AboutUsScreen extends BaseClass {
 
     ChromeDriver chromeDriver;
     String aboutUsButton="//*[@id=\"gatsby-focus-wrapper\"]/div/header/div/div[1]/div/nav/ul/li[4]/a/span";
+    String careersButton="//*[@id=\"gatsby-focus-wrapper\"]/div/header/div/div[1]/div/nav/ul/li[5]/a/span";
     String hqXpath="//*[@id=\"gatsby-focus-wrapper\"]/div/main/div/div[2]/div/div[1]/section/ul/li[1]/strong";
     String sanfranciskoXpath="//*[@id=\"gatsby-focus-wrapper\"]/div/main/div/div[2]/div/div[1]/section/ul/li[1]/div/div/p";
     String foundedXpath = "//*[@id=\"gatsby-focus-wrapper\"]/div/main/div/div[2]/div/div[1]/section/ul/li[2]/strong";
@@ -27,6 +28,9 @@ public class AboutUsScreen extends BaseClass {
     }
     WebElement getButtonElement(){
         return chromeDriver.findElement(By.xpath(aboutUsButton));
+    }
+    WebElement getButtonCareersElement(){
+        return chromeDriver.findElement(By.xpath(careersButton));
     }
     WebElement getHQElement(){
         return chromeDriver.findElement(By.xpath(hqXpath));
@@ -69,7 +73,7 @@ public class AboutUsScreen extends BaseClass {
         String url = chromeDriver.getCurrentUrl();
         assert  url.equals("https://symphony.is/about-us");
     }
-    public void checkSelectionOffices(){
+    public void checkOffices(){
         assert getConsultingElement().getText().equals("Consulting Offices");
         assert getOfficesElement().getText().equals("Amsterdam\n" +
                 "Berlin\n" +
@@ -77,18 +81,25 @@ public class AboutUsScreen extends BaseClass {
                 "London\n" +
                 "Denver\n" +
                 "Zurich");
+        System.out.println("Checking of offices is done");
     }
-    public void checkSelectionHQ(){
+    public void checkHQ(){
         assert getHQElement().getText().equals("HQ");
         assert getSFElement().getText().equals("San Francisco");
+        System.out.println("Checking of HQ is done");
+
     }
     public void checkFounded(){
         assert getFoundedElement().getText().equals("Founded");
         assert getY2007Element().getText().equals("2007");
+        System.out.println("Checking of founded year is done");
+
     }
     public void checkSize(){
         assert getSizeElement().getText().equals("Size");
         assert getN450Element().getText().equals("450+");
+        System.out.println("Checking of size is done");
+
     }
     public void checkEngineeringHubs(){
         assert getEngineeringElement().getText().equals("Engineering Hubs");
@@ -97,9 +108,16 @@ public class AboutUsScreen extends BaseClass {
                 "Skopje\n" +
                 "Novi Sad\n" +
                 "Nis");
+        System.out.println("Checking of hub is done");
+
     }
     public void checkClients(){
         assert getClientElement().getText().equals("Clients");
         assert getn100Element().getText().equals("100+");
+        System.out.println("Checking of clients size is done");
+
+    }
+    public void clickOnCareers(){
+        getButtonCareersElement().click();
     }
 }
