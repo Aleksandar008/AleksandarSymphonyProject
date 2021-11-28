@@ -1,4 +1,6 @@
-public class Utils {
+import tests.BaseClass;
+
+public class Utils extends BaseClass {
     public static String prescriptionId = "";
 
     public static String getPrescriptionId() {

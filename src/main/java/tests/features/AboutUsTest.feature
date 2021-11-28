@@ -14,3 +14,9 @@ Feature: About us features
     Then Verify that Consulting Offices is Amsterdam, Berlin, Copenhagen, London, Denver, Zurich
     Then Verify that Engineering Hubs is Sarajevo, Belgrade, Skopje, Novi Sad, Nis
     Then Verify that Clients are 100+
+
+  Scenario: Verify URL
+    Given System is landed on home page
+    When Click on About us from top menu
+    Then About us should be opened
+    Then URL should be https://symphony.is/about-us
