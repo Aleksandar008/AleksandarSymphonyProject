@@ -8,6 +8,7 @@ import screens.HomeScreen;
 import screens.NewOpenCareerScreen;
 import tests.cucumber.CareersTest;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -21,7 +22,7 @@ public class BaseClass {
     public NewOpenCareerScreen newOpenCareerScreen;
 
     @BeforeClass
-    public void SetUp() {
+    public void SetUp() throws IOException {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Aleksandar Zahariev\\Documents\\Aleksandar Symphony\\symphony-main\\symphony-main\\AleksandarSymphonyProject\\chromedriver_win32\\chromedriver.exe");
         chromeDriver = new ChromeDriver();
         chromeDriver.manage().window().maximize();

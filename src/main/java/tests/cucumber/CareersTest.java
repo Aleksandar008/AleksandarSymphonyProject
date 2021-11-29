@@ -3,6 +3,10 @@ package tests.cucumber;
 import org.testng.annotations.Test;
 import tests.BaseClass;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -35,5 +39,16 @@ public class CareersTest extends BaseClass {
         }
         chromeDriver.switchTo().window(mainWindowsHandle);
         System.out.println("url e "+ chromeDriver.getCurrentUrl());
+    }
+    @Test
+    public void careerTestAllOpenPosition() throws InterruptedException, IOException {
+        homeScreen.clickOnAgreeButton();
+        homeScreen.clickOnAboutUsButton();
+        Thread.sleep(2000);
+        careerScreen.clickOnCareersButton();
+        careerScreen.clickOnCurrentOpeningsButton();
+        careerScreen.printaj();
+
+
     }
 }

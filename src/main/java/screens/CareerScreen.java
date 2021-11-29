@@ -5,6 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import tests.BaseClass;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.List;
+
 public class CareerScreen extends BaseClass  {
 
     ChromeDriver chromeDriver;
@@ -17,8 +23,9 @@ public class CareerScreen extends BaseClass  {
     String firstJobTitleXpath ="//*[@id=\"current-openings\"]/div/ul/li[51]/a/div[2]";
     String firstJobLocationXpath = "//*[@id=\"current-openings\"]/div/ul/li[51]/a/div[3]/div";
     String firstJobTypeXpath="//*[@id=\"current-openings\"]/div/ul/li[51]/a/div[1]";
+    String gridXpath = "//*[@id=\"current-openings\"]/div/ul/li";
 
-    public CareerScreen(ChromeDriver chromeDriver) {
+    public CareerScreen(ChromeDriver chromeDriver) throws IOException {
         this.chromeDriver = chromeDriver;
     }
 
@@ -43,7 +50,7 @@ public class CareerScreen extends BaseClass  {
     WebElement getFirstJobTitleElement(){return chromeDriver.findElement(By.xpath(firstJobTitleXpath));}
     WebElement getFirstJobLocationElement(){return chromeDriver.findElement(By.xpath(firstJobLocationXpath));}
     WebElement getFirstJobTypeElement(){return chromeDriver.findElement(By.xpath(firstJobTypeXpath));}
-
+    List<WebElement> getGridElement(){ return chromeDriver.findElements(By.xpath(gridXpath));}
     public void clickOnAgreeButton(){
         getAgreeButtonElement().click();
     }
@@ -71,5 +78,21 @@ public class CareerScreen extends BaseClass  {
     public String getType(){
        return getFirstJobTypeElement().getText();
     }
-
+    public String print(int i ){
+            String xPath1 = ("//*[@id=\"current-openings\"]/div/ul/li["+i+"]/a/div[2]");
+            String xPath2 = ("//*[@id=\"current-openings\"]/div/ul/li["+i+"]/a/div[3]");
+            WebElement info1 =chromeDriver.findElement(By.xpath(xPath1));
+            WebElement info2 =chromeDriver.findElement(By.xpath(xPath2));
+            return info1.getText()+", "+info2.getText();
+    }
+    public void printaj() throws IOException {
+            File file = new File("resources/allOpenPosition.txt");
+            FileWriter fw = new FileWriter(file);
+            BufferedWriter writer = new BufferedWriter(fw);
+        for(int i=1; i<=getGridElement().size();i++) {
+            writer.write(print(i));
+            writer.newLine();
+        }
+        writer.close();
+    }
 }
