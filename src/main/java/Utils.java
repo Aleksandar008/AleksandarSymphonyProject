@@ -1,11 +1,5 @@
-public class Utils {
-    public static String prescriptionId = "";
+import tests.BaseClass;
 
-    public static String getPrescriptionId() {
-        return prescriptionId;
-    }
+public class Utils extends BaseClass {
 
-    public static void setPrescriptionId(String prescriptionId) {
-        Utils.prescriptionId = prescriptionId;
-    }
 }
