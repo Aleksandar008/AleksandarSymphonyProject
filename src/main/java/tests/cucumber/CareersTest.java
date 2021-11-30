@@ -100,7 +100,7 @@ public class CareersTest extends BaseClass {
         Thread.sleep(7000);
         gmailHomeScreen.clickOnToField();
         Thread.sleep(3000);
-        gmailHomeScreen.insertEmail("aleksandar.zahariev08@gmail.com"+Keys.TAB);
+        gmailHomeScreen.insertEmail("symphony@mailnator.com"+Keys.TAB);
         Thread.sleep(1000);
         gmailHomeScreen.clickOnMessageField();
         Thread.sleep(1000);
@@ -125,7 +125,7 @@ public class CareersTest extends BaseClass {
             System.err.println("Assert that screenshot is sent was fail");
         }
         try {
-            assert gmailHomeScreen.getSentMessageReceiverText().matches("aleksa.*");
+            assert gmailHomeScreen.getSentMessageReceiverText().matches("symph.*");
             System.out.println("Assert about receiver is passed");
 
         }
