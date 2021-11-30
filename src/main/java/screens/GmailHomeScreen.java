@@ -10,8 +10,11 @@ public class GmailHomeScreen extends BaseClass  {
     ChromeDriver chromeDriver;
     String composeXpath="/html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div/div/div/div[1]/div/div";
     String toFieldXpath="/html/body/div[24]/div/div/div/div[1]/div[3]/div[1]/div[1]/div/div/div/div[3]/div/div/div[4]/table/tbody/tr/td[2]/form/div[1]/table/tbody/tr[1]/td[2]/div/div/textarea";
+    String nameTo="to";
     String toSubjectXpath="/html/body/div[24]/div/div/div/div[1]/div[3]/div[1]/div[1]/div/div/div/div[3]/div/div/div[4]/table/tbody/tr/td[2]/form/div[3]/div/input";
+    String toSubjectName="subjectbox";
     String messageXpath="/html/body/div[24]/div/div/div/div[1]/div[3]/div[1]/div[1]/div/div/div/div[3]/div/div/div[4]/table/tbody/tr/td[2]/table/tbody/tr[1]/td/div/div[1]/div[2]/div[1]/div/table/tbody/tr/td[2]/div[2]/div";
+    String messageID=":et";
     String filedata="Filedata";
     String sendButton="/html/body/div[24]/div/div/div/div[1]/div[3]/div[1]/div[1]/div/div/div/div[3]/div/div/div[4]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/div/div/div[4]/table/tbody/tr/td[1]/div/div[2]/div[1]";
     String sentButtonTopMenuXpath="/html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div/div[1]/div[1]/div/div[4]/div/div/div[2]";
@@ -25,10 +28,10 @@ public class GmailHomeScreen extends BaseClass  {
         return chromeDriver.findElement(By.xpath(composeXpath));
     }
     WebElement getToFieldElement(){
-        return chromeDriver.findElement(By.xpath(toFieldXpath));
+        return chromeDriver.findElement(By.name(nameTo));
     }
     WebElement getSubjectFieldElement(){
-        return chromeDriver.findElement(By.xpath(toSubjectXpath));
+        return chromeDriver.findElement(By.name(toSubjectName));
     }
     WebElement getMessageFieldElement(){
         return chromeDriver.findElement(By.xpath(messageXpath));
