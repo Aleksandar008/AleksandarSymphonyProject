@@ -19,6 +19,9 @@ public class GmailHomeScreen extends BaseClass  {
     String sendButton="/html/body/div[24]/div/div/div/div[1]/div[3]/div[1]/div[1]/div/div/div/div[3]/div/div/div[4]/table/tbody/tr/td[2]/table/tbody/tr[2]/td/div/div/div[4]/table/tbody/tr/td[1]/div/div[2]/div[1]";
     String sentButtonTopMenuXpath="/html/body/div[7]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div/div/div/div[2]/div/div/div[1]/div[1]/div/div[4]/div/div/div[2]";
     String sentMessageAttachementXpath="/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div[2]/div[4]/div[2]/div/table/tbody/tr[1]/td[5]/div[2]/div/span[2]";
+    String sentMessageTitleXpath = "/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div[2]/div[4]/div[2]/div/table/tbody/tr[1]/td[5]/div[1]/div/div[2]/span/span";
+    String sentMessageReceiverXpath ="/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div[2]/div[4]/div[2]/div/table/tbody/tr[1]/td[4]/div[2]/span";
+    String sentMessageTextXpath ="/html/body/div[7]/div[3]/div/div[2]/div[1]/div[2]/div/div/div/div/div[2]/div/div[1]/div/div[2]/div[4]/div[2]/div/table/tbody/tr[1]/td[5]/div[1]/div/span";
 
     public GmailHomeScreen(ChromeDriver chromeDriver) {
         this.chromeDriver = chromeDriver;
@@ -44,6 +47,15 @@ public class GmailHomeScreen extends BaseClass  {
     }
     WebElement getSentButtonTopMenuElement(){return chromeDriver.findElement(By.xpath(sentButtonTopMenuXpath));}
     WebElement getSentMessageAttachmentElement(){return chromeDriver.findElement(By.xpath(sentMessageAttachementXpath));}
+    WebElement getSentMessageTitleElement(){
+        return chromeDriver.findElement(By.xpath(sentMessageTitleXpath));
+    }
+    WebElement getSentMessageReceiverElement(){
+        return chromeDriver.findElement(By.xpath(sentMessageReceiverXpath));
+    }
+    WebElement getSentMessageTextElement(){
+        return chromeDriver.findElement(By.xpath(sentMessageTextXpath));
+    }
 
     public void attachPhoto(String s){
         getAttachmentElement().sendKeys(s);
@@ -80,5 +92,14 @@ public class GmailHomeScreen extends BaseClass  {
     }
     public String getSentMessageAttachmentName(){
         return getSentMessageAttachmentElement().getText();
+    }
+    public String getSentMessageTitleText(){
+        return getSentMessageTitleElement().getText();
+    }
+    public String getSentMessageReceiverText(){
+        return getSentMessageReceiverElement().getText();
+    }
+    public String getSentMessageText(){
+        return getSentMessageTextElement().getText();
     }
 }
