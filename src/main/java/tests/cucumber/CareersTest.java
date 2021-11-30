@@ -41,6 +41,7 @@ public class CareersTest extends BaseClass {
         }
         chromeDriver.switchTo().window(mainWindowsHandle);
         System.out.println("url e "+ chromeDriver.getCurrentUrl());
+        careerScreen.clickOnAllLocationButton();
     }
     @Test
     public void careerTestAllOpenPosition() throws  IOException {
@@ -101,7 +102,7 @@ public class CareersTest extends BaseClass {
         gmailHomeScreen.clickOnToField();
         Thread.sleep(3000);
         gmailHomeScreen.insertEmail("symphony@mailnator.com"+Keys.TAB);
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         gmailHomeScreen.clickOnMessageField();
         Thread.sleep(1000);
         gmailHomeScreen.clickOnSubjectField();

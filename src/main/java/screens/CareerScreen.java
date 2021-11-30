@@ -20,6 +20,7 @@ public class CareerScreen extends BaseClass  {
     String careersButtonXpath ="//*[@id=\"gatsby-focus-wrapper\"]/div/header/div/div[1]/div/nav/ul/li[5]/a";
     String currentOpeningsXpath ="//*[@id=\"gatsby-focus-wrapper\"]/div/header/div/div[1]/div/nav/ul/li[5]/div/ul/li[2]/a";
     String skopjeXpath="//*[@id=\"current-openings\"]/div/nav/ul/li[7]/button/span";
+    String allLocationXpath="//*[@id=\"current-openings\"]/div/nav/ul/li[1]/button/span";
     String firstJobXpath="//*[@id=\"current-openings\"]/div/ul/li[51]/a";
     String firstJobTitleXpath ="//*[@id=\"current-openings\"]/div/ul/li[51]/a/div[2]";
     String firstJobLocationXpath = "//*[@id=\"current-openings\"]/div/ul/li[51]/a/div[3]/div";
@@ -46,6 +47,9 @@ public class CareerScreen extends BaseClass  {
     WebElement getSkopjeElement(){
         return chromeDriver.findElement(By.xpath(skopjeXpath));
     }
+    WebElement getallLocationElement(){
+        return chromeDriver.findElement(By.xpath(allLocationXpath));
+    }
     WebElement getFirstJobElement(){
         return chromeDriver.findElement(By.xpath(firstJobXpath));
     }
@@ -69,6 +73,9 @@ public class CareerScreen extends BaseClass  {
     }
     public void clickOnSkopjeButton(){
         getSkopjeElement().click();
+    }
+    public void clickOnAllLocationButton(){
+        getallLocationElement().click();
     }
     public void clickOnFirstJovButton(){
         getFirstJobElement().click();
