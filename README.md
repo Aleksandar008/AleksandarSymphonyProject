@@ -9,9 +9,11 @@ https://chromedriver.chromium.org/downloads also make sure that location of chro
 
 Also make sure that you have install java SDK
 
-Runn a test: 
+## Runn a test: 
 In direction cucumer you can found few test 
 CareersTest.java
 AboutUsTest.java
 OpenSymphonyIs.java
 just need to run classes and test will be execute one by one
+
+## Project is maven 
