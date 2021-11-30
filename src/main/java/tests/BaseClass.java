@@ -2,10 +2,7 @@ package tests;
 import io.cucumber.java8.Ca;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
-import screens.AboutUsScreen;
-import screens.CareerScreen;
-import screens.HomeScreen;
-import screens.NewOpenCareerScreen;
+import screens.*;
 import tests.cucumber.CareersTest;
 
 import java.io.IOException;
@@ -20,6 +17,9 @@ public class BaseClass {
     public AboutUsScreen aboutUsScreen;
     public CareerScreen careerScreen;
     public NewOpenCareerScreen newOpenCareerScreen;
+    public GmailLoginScreen gmailLoginScreen;
+    public GmailPasscodeScreen gmailPasscodeScreen;
+    public GmailHomeScreen gmailHomeScreen;
 
     @BeforeClass
     public void SetUp() throws IOException {
@@ -33,6 +33,10 @@ public class BaseClass {
         aboutUsScreen = new AboutUsScreen(chromeDriver);
         careerScreen = new CareerScreen(chromeDriver);
         newOpenCareerScreen = new NewOpenCareerScreen(chromeDriver);
+        gmailLoginScreen = new GmailLoginScreen(chromeDriver);
+        gmailPasscodeScreen = new GmailPasscodeScreen(chromeDriver);
+        gmailHomeScreen = new GmailHomeScreen(chromeDriver);
+
     }
 
 }

@@ -32,7 +32,6 @@ Service Delivery Manager, Niš, RS
 Software Developers, Niš, RS
 Solution Architect, Niš, RS
 UI/UX Designer, Niš, RS
-Application Security Engineer, Novi Sad, Belgrade, RS
 Android Developer, Novi Sad, RS
 Data Engineers, Novi Sad, RS
 DevOps Engineers, Novi Sad, RS
